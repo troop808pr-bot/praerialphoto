@@ -272,13 +272,16 @@
             <p class="font-sans text-xs tracking-widest text-gray-400 uppercase">Follow the aerial journey.</p>
         </div>
         
-        <!-- Contenedor principal para ocultar lo que sobresalga -->
-        <div class="w-full overflow-hidden reveal">
-            <!-- TRUCO PARA ANDROID: Forzamos la caja a ser 120% más ancha (w-[120%]) y la centramos (-ml-[10%]). -->
-            <!-- Esto obliga al widget a dibujar fotos más grandes, y overflow-hidden recorta el excedente lateral. -->
-            <div class="w-[120%] -ml-[10%] md:w-full md:-ml-0 -mb-[80px] md:-mb-10">
+        <!-- Contenedor principal con proporciones perfectas -->
+        <div class="w-full relative reveal overflow-hidden pb-4">
+            <!-- Escala uniforme (1.05) que hace las fotos más grandes en móvil SIN perder su forma cuadrada -->
+            <div class="w-full transform scale-[1.05] md:scale-100 origin-top">
                 <behold-widget feed-id="QhEXqbBHhPCyQavc5VZD" class="block w-full"></behold-widget>
             </div>
+
+            <!-- PARCHE VISUAL DEFINITIVO: -->
+            <!-- Una barra negra pura que cubre solo el área del anuncio en la parte inferior, dejando las fotos intactas -->
+            <div class="absolute bottom-0 left-0 w-full h-[60px] bg-deep-black z-50 pointer-events-none"></div>
         </div>
     </section>
 
