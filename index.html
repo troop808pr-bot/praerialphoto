@@ -89,8 +89,12 @@
 
     <!-- Navigation (Minimalist & Mobile Optimized) -->
     <nav class="fixed w-full z-[70] top-0 transition-all duration-300 py-6 px-6 md:px-8 safe-padding flex justify-between items-center bg-transparent text-white drop-shadow-sm">
-        <!-- El nombre completo siempre visible, ajustando su tamaño para celular -->
-        <div id="nav-brand" class="font-serif font-bold tracking-wider text-xs sm:text-sm md:text-xl text-ocean-blue transition-colors duration-300 relative max-w-[75%]">
+        <!-- Brand with Logo - Fixed Google Drive Link -->
+        <div id="nav-brand" class="flex items-center gap-3 font-serif font-bold tracking-wider text-xs sm:text-sm md:text-xl text-ocean-blue transition-colors duration-300 relative max-w-[85%]">
+            <img src="https://drive.google.com/uc?export=view&id=1kZX8eY1qEEvEZUcQTiUeMtYl58CHwb76" 
+                 alt="PR Aerial Photo Logo" 
+                 class="w-10 h-10 md:w-14 md:h-14 object-contain transition-transform duration-300 hover:scale-105"
+                 onerror="this.style.display='none'">
             <span>Puerto Rico Aerial Photography</span>
         </div>
         
@@ -117,16 +121,9 @@
         <a href="#store" class="mobile-link w-3/4 text-center border-b border-gray-800 pb-4 hover:text-gray-400 transition-colors duration-300">PRINTS</a>
         <a href="#contact" class="mobile-link w-3/4 text-center pb-4 hover:text-gray-400 transition-colors duration-300">CONTACT</a>
         
-        <!-- Redes Sociales para Creador (Iconos) -->
         <div class="absolute bottom-12 flex space-x-12 text-sm text-gray-500 tracking-widest">
             <a href="https://instagram.com/pr_aerial_photo" target="_blank" class="hover:text-white transition-colors duration-300 p-2" aria-label="Instagram">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-            </a>
-            <a href="#" class="hover:text-white transition-colors duration-300 p-2" aria-label="TikTok">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
-            </a>
-            <a href="#" class="hover:text-white transition-colors duration-300 p-2" aria-label="Facebook">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
             </a>
         </div>
     </div>
@@ -193,12 +190,17 @@
             <div class="max-w-lg reveal">
                 <h2 class="font-serif text-3xl md:text-5xl mb-8">THE VISION</h2>
                 <p class="font-sans font-light leading-relaxed mb-6 text-gray-700">
-                    PR Aerial Photo is dedicated to capturing the breathtaking beauty of Puerto Rico from the sky. 
+                    Puerto Rico Aerial Photography is dedicated to capturing the breathtaking beauty of Puerto Rico from the sky. 
                 </p>
                 <p class="font-sans font-light leading-relaxed mb-8 text-gray-700">
                     Using professional drone technology and a passion for nature, each photograph reveals perspectives that transform familiar landscapes into cinematic works of art. My mission is to share the untamed spirit of the island.
                 </p>
-                <p class="font-sans font-bold tracking-widest text-xs uppercase text-deep-black">— Ángel</p>
+                
+                <div class="mt-12">
+                    <p class="font-sans font-bold tracking-[0.2em] text-xs uppercase text-deep-black">— Ángel Maldonado</p>
+                    <p class="font-sans text-[10px] tracking-[0.3em] uppercase text-gray-400 mt-2 font-medium">Drone Photographer</p>
+                    <p class="font-sans text-[10px] tracking-[0.3em] uppercase text-gray-400 mt-1 font-bold">FAA Part 107</p>
+                </div>
             </div>
         </div>
     </section>
@@ -212,27 +214,19 @@
             </div>
             
             <div class="flex flex-col md:flex-row justify-center gap-8 md:gap-12">
-                <!-- Reel 1 -->
                 <div class="w-full md:w-72 h-[500px] bg-black rounded-3xl overflow-hidden border-4 border-gray-800 relative reveal">
                     <video class="w-full h-full object-cover" autoplay loop muted playsinline preload="auto">
                         <source src="mi-reel_2.mp4" type="video/mp4">
-                        Tu navegador no soporta video HTML5.
                     </video>
                 </div>
-
-                <!-- Reel 2 -->
                 <div class="w-full md:w-72 h-[500px] bg-black rounded-3xl overflow-hidden border-4 border-gray-800 relative reveal" style="transition-delay: 150ms;">
                     <video class="w-full h-full object-cover" autoplay loop muted playsinline preload="auto">
                         <source src="mi-reel.mp4" type="video/mp4">
-                        Tu navegador no soporta video HTML5.
                     </video>
                 </div>
-
-                <!-- Reel 3 -->
                 <div class="w-full md:w-72 h-[500px] bg-black rounded-3xl overflow-hidden border-4 border-gray-800 relative reveal" style="transition-delay: 300ms;">
                     <video class="w-full h-full object-cover" autoplay loop muted playsinline preload="auto">
                         <source src="mi-reel_3.mp4" type="video/mp4">
-                        Tu navegador no soporta video HTML5.
                     </video>
                 </div>
             </div>
@@ -252,18 +246,17 @@
                     <li>Fine Art Prints</li>
                     <li>Canvas Formats</li>
                     <li>Large Format Prints</li>
-                    <li>Collector Editions</li>
+                    <li>Metal Prints</li>
                 </ul>
                 <p class="font-sans text-xs text-gray-500 mb-8 tracking-widest">SIZES: SMALL | MEDIUM | LARGE | PREMIUM GALLERY</p>
-                <a href="#contact" class="inline-block bg-deep-black text-white px-8 py-4 uppercase tracking-widest text-xs hover:bg-gray-800 transition-colors">
-                    Inquire About Prints
+                <a href="https://praerialphoto.darkroom.com/" target="_blank" rel="noopener noreferrer" class="inline-block bg-deep-black text-white px-8 py-4 uppercase tracking-widest text-xs hover:bg-gray-800 transition-colors">
+                    Print Store
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 7: INSTAGRAM (Widget Ajustado para móvil y Modo Oscuro) -->
-    <!-- Adaptado al fondo oscuro que muestras en tu captura de pantalla -->
+    <!-- SECTION 7: INSTAGRAM -->
     <section class="bg-deep-black pt-24 pb-12 text-clean-white">
         <div class="text-center mb-12 reveal">
             <h3 class="font-serif text-2xl md:text-3xl mb-2">
@@ -272,15 +265,10 @@
             <p class="font-sans text-xs tracking-widest text-gray-400 uppercase">Follow the aerial journey.</p>
         </div>
         
-        <!-- Contenedor principal con proporciones perfectas -->
         <div class="w-full relative reveal overflow-hidden pb-4">
-            <!-- Escala uniforme (1.05) que hace las fotos más grandes en móvil SIN perder su forma cuadrada -->
             <div class="w-full transform scale-[1.05] md:scale-100 origin-top">
                 <behold-widget feed-id="QhEXqbBHhPCyQavc5VZD" class="block w-full"></behold-widget>
             </div>
-
-            <!-- PARCHE VISUAL DEFINITIVO: -->
-            <!-- Una barra negra pura que cubre solo el área del anuncio en la parte inferior, dejando las fotos intactas -->
             <div class="absolute bottom-0 left-0 w-full h-[60px] bg-deep-black z-50 pointer-events-none"></div>
         </div>
     </section>
@@ -303,7 +291,7 @@
         <p>&copy; 2026 PR Aerial Photo. All rights reserved.</p>
     </footer>
 
-    <!-- Javascript for Scroll Animations & Mobile Menu -->
+    <!-- Javascript -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             function reveal() {
