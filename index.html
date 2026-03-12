@@ -31,9 +31,6 @@
         }
     </script>
 
-    <!-- Behold Widget Script -->
-    <script type="module" src="https://w.behold.so/widget.js"></script>
-
     <!-- Custom CSS for Animations and Parallax -->
     <style>
         /* Smooth scrolling */
@@ -50,9 +47,9 @@
             transform: translateY(0);
         }
         
-        /* Hero Parallax Setup */
+        /* Hero Parallax Setup con tu imagen personalizada */
         .hero-parallax {
-            background-image: linear-gradient(rgba(17, 17, 17, 0.4), rgba(17, 17, 17, 0.6)), url('https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-image: linear-gradient(rgba(17, 17, 17, 0.5), rgba(17, 17, 17, 0.7)), url('https://lh3.googleusercontent.com/d/1Ip4F85A_cC8uubsyrchVCvEfnSTg6Tr0');
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
@@ -78,36 +75,46 @@
         * {
             -webkit-tap-highlight-color: transparent; 
         }
+        /* Padding dinámico para el header */
         .safe-padding {
-            padding-top: max(1.5rem, env(safe-area-inset-top)) !important;
-            padding-left: max(1.5rem, env(safe-area-inset-left)) !important;
-            padding-right: max(1.5rem, env(safe-area-inset-right)) !important;
+            padding-top: max(0.5rem, env(safe-area-inset-top));
+            padding-left: max(1.5rem, env(safe-area-inset-left));
+            padding-right: max(1.5rem, env(safe-area-inset-right));
+            transition: padding 0.4s ease;
+        }
+
+        /* Clase para cuando el header está comprimido al bajar */
+        .nav-compact {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
         }
     </style>
 </head>
 <body class="font-sans text-deep-black bg-clean-white antialiased overflow-x-hidden">
 
-    <!-- Navigation (Minimalist & Mobile Optimized) -->
-    <nav class="fixed w-full z-[70] top-0 transition-all duration-300 py-6 px-6 md:px-8 safe-padding flex justify-between items-center bg-transparent text-white drop-shadow-sm">
-        <!-- Brand with Logo - Fixed Google Drive Link -->
-        <div id="nav-brand" class="flex items-center gap-3 font-serif font-bold tracking-wider text-xs sm:text-sm md:text-xl text-ocean-blue transition-colors duration-300 relative max-w-[85%]">
-            <img src="https://drive.google.com/uc?export=view&id=1kZX8eY1qEEvEZUcQTiUeMtYl58CHwb76" 
-                 alt="PR Aerial Photo Logo" 
-                 class="w-10 h-10 md:w-14 md:h-14 object-contain transition-transform duration-300 hover:scale-105"
-                 onerror="this.style.display='none'">
-            <span>Puerto Rico Aerial Photography</span>
+    <!-- Navigation (Compacto) -->
+    <nav class="fixed w-full z-[70] top-0 transition-all duration-500 py-1 px-6 md:px-8 safe-padding flex justify-between items-center bg-transparent text-white drop-shadow-sm">
+        <!-- Brand with LARGER Logo (No Square) -->
+        <div id="nav-brand" class="flex items-center gap-4 md:gap-6 font-serif font-bold tracking-wider text-xs sm:text-base md:text-2xl text-white transition-colors duration-300 relative max-w-[90%]">
+            <div class="relative w-24 h-24 md:w-36 md:h-36 flex items-center justify-center">
+                <img src="https://lh3.googleusercontent.com/d/1kZX8eY1qEEvEZUcQTiUeMtYl58CHwb76" 
+                     alt="PR Aerial Photo Logo" 
+                     class="w-full h-full object-contain transition-transform duration-300 hover:scale-105 drop-shadow-2xl"
+                     onerror="this.style.display='none'">
+            </div>
+            <span class="drop-shadow-2xl leading-tight">Puerto Rico <br class="sm:hidden"> Aerial Photography</span>
         </div>
         
         <!-- Desktop Menu -->
-        <div class="hidden md:flex space-x-8 text-sm tracking-widest font-light">
-            <a href="#portfolio" class="hover:opacity-70 transition">PORTFOLIO</a>
-            <a href="#about" class="hover:opacity-70 transition">THE VISION</a>
-            <a href="#store" class="hover:opacity-70 transition">PRINTS</a>
-            <a href="#contact" class="hover:opacity-70 transition">CONTACT</a>
+        <div class="hidden lg:flex space-x-8 text-sm tracking-widest font-light">
+            <a href="#portfolio" class="hover:text-gray-300 transition">PORTFOLIO</a>
+            <a href="#about" class="hover:text-gray-300 transition">THE VISION</a>
+            <a href="#store" class="hover:text-gray-300 transition">PRINTS</a>
+            <a href="#contact" class="hover:text-gray-300 transition">CONTACT</a>
         </div>
 
         <!-- Mobile Hamburger Button -->
-        <button id="mobile-menu-btn" class="md:hidden text-ocean-blue focus:outline-none transition-colors duration-300 relative p-2 -mr-2" aria-label="Abrir Menú">
+        <button id="mobile-menu-btn" class="lg:hidden text-white focus:outline-none transition-colors duration-300 relative p-2 -mr-2" aria-label="Abrir Menú">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path id="menu-icon-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
@@ -115,27 +122,21 @@
     </nav>
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 w-full h-[100dvh] bg-deep-black text-clean-white flex flex-col items-center justify-center space-y-8 text-xl tracking-[0.2em] font-light opacity-0 pointer-events-none transition-opacity duration-400 ease-in-out md:hidden z-[60]">
-        <a href="#portfolio" class="mobile-link w-3/4 text-center border-b border-gray-800 pb-4 hover:text-gray-400 transition-colors duration-300">PORTFOLIO</a>
-        <a href="#about" class="mobile-link w-3/4 text-center border-b border-gray-800 pb-4 hover:text-gray-400 transition-colors duration-300">THE VISION</a>
-        <a href="#store" class="mobile-link w-3/4 text-center border-b border-gray-800 pb-4 hover:text-gray-400 transition-colors duration-300">PRINTS</a>
-        <a href="#contact" class="mobile-link w-3/4 text-center pb-4 hover:text-gray-400 transition-colors duration-300">CONTACT</a>
-        
-        <div class="absolute bottom-12 flex space-x-12 text-sm text-gray-500 tracking-widest">
-            <a href="https://instagram.com/pr_aerial_photo" target="_blank" class="hover:text-white transition-colors duration-300 p-2" aria-label="Instagram">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-            </a>
-        </div>
+    <div id="mobile-menu" class="fixed inset-0 w-full h-[100dvh] bg-deep-black text-clean-white flex flex-col items-center justify-center space-y-8 text-xl tracking-[0.2em] font-light opacity-0 pointer-events-none transition-opacity duration-400 ease-in-out lg:hidden z-[60]">
+        <a href="#portfolio" class="mobile-link w-3/4 text-center border-b border-gray-800 pb-4">PORTFOLIO</a>
+        <a href="#about" class="mobile-link w-3/4 text-center border-b border-gray-800 pb-4">THE VISION</a>
+        <a href="#store" class="mobile-link w-3/4 text-center border-b border-gray-800 pb-4">PRINTS</a>
+        <a href="#contact" class="mobile-link w-3/4 text-center pb-4">CONTACT</a>
     </div>
 
     <!-- SECTION 1: HERO SECTION -->
     <section class="hero-parallax h-screen flex items-center justify-center text-center px-4 relative">
         <div class="reveal max-w-4xl z-10 text-white">
-            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl mb-6 tracking-wide drop-shadow-lg">PUERTO RICO<br>FROM ABOVE</h1>
-            <p class="font-sans font-light text-lg md:text-xl mb-10 max-w-2xl mx-auto opacity-90">
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl mb-6 tracking-wide drop-shadow-2xl">PUERTO RICO<br>FROM ABOVE</h1>
+            <p class="font-sans font-light text-lg md:text-xl mb-10 max-w-2xl mx-auto opacity-90 drop-shadow-lg">
                 Aerial photography capturing the natural beauty of the island from a unique perspective.
             </p>
-            <a href="#portfolio" class="inline-block border border-white text-white px-10 py-4 uppercase tracking-widest text-sm hover:bg-white hover:text-deep-black transition-colors duration-500">
+            <a href="#portfolio" class="inline-block border border-white text-white px-10 py-4 uppercase tracking-widest text-sm hover:bg-white hover:text-deep-black transition-all duration-500 shadow-xl">
                 View Gallery
             </a>
         </div>
@@ -148,34 +149,58 @@
     <section class="bg-deep-black text-white py-32 px-6 text-center">
         <div class="max-w-4xl mx-auto reveal">
             <h2 class="font-serif text-3xl md:text-5xl italic leading-relaxed mb-6">"Some places can only be truly appreciated from the sky."</h2>
-            <p class="font-sans font-light text-gray-400 text-sm md:text-base tracking-wide max-w-xl mx-auto">
-                Through aerial photography, Puerto Rico reveals a perspective few people ever see.
+            <p class="font-sans font-light text-gray-400 text-sm md:text-base tracking-wide max-w-xl mx-auto uppercase">
+                Puerto Rico Aerial Photography
             </p>
         </div>
     </section>
 
-    <!-- SECTION 3: PHOTOGRAPHY GALLERY -->
+    <!-- SECTION 3: PHOTOGRAPHY GALLERY (Updated with 9 new images) -->
     <section id="portfolio" class="bg-soft-gray py-24 px-6 md:px-12 lg:px-24">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16 reveal">
-                <h2 class="font-serif text-3xl md:text-4xl mb-4 text-deep-black">BREATHTAKING PERSPECTIVES</h2>
+                <h2 class="font-serif text-3xl md:text-4xl mb-4 text-deep-black uppercase tracking-widest">Breathtaking Perspectives</h2>
                 <p class="font-sans text-xs md:text-sm tracking-[0.2em] text-gray-500 uppercase">
-                    Beaches &nbsp;•&nbsp; Waves &nbsp;•&nbsp; Coastlines &nbsp;•&nbsp; Nature &nbsp;•&nbsp; Cinematic Landscapes
+                    Nature &nbsp;•&nbsp; Coasts &nbsp;•&nbsp; Landscapes &nbsp;•&nbsp; Puerto Rico
                 </p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+                <!-- Image 1 (Large) -->
                 <div class="md:col-span-2 overflow-hidden group reveal">
-                    <img src="https://images.unsplash.com/photo-1589307357833-88bc1cb8d313?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Aerial Puerto Rico Beach" class="w-full h-[400px] md:h-[600px] object-cover transition duration-700 group-hover:scale-105">
+                    <img src="https://lh3.googleusercontent.com/d/1Pb5u_vgCQ3AbYlDjPi_lzeabOAn2wgmg" alt="Aerial Shot 1" class="w-full h-[400px] md:h-[600px] object-cover transition duration-700 group-hover:scale-105">
                 </div>
+                <!-- Image 2 -->
                 <div class="overflow-hidden group reveal" style="transition-delay: 100ms;">
-                    <img src="https://images.unsplash.com/photo-1542317822-263ebaa6d1fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Aerial Waves" class="w-full h-[400px] md:h-[600px] object-cover transition duration-700 group-hover:scale-105">
+                    <img src="https://lh3.googleusercontent.com/d/17-COHRemdFLf7LG2h1gCj0aUjEAhC903" alt="Aerial Shot 2" class="w-full h-[400px] md:h-[600px] object-cover transition duration-700 group-hover:scale-105">
                 </div>
+                <!-- Image 3 -->
                 <div class="overflow-hidden group reveal">
-                    <img src="https://images.unsplash.com/photo-1516483638261-f40af5bea098?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Coastline" class="w-full h-80 object-cover transition duration-700 group-hover:scale-105">
+                    <img src="https://lh3.googleusercontent.com/d/1_PdI4Qk7wQkEWQ7n4TNjKNdOkLy43v_c" alt="Aerial Shot 3" class="w-full h-80 object-cover transition duration-700 group-hover:scale-105">
                 </div>
-                <div class="md:col-span-2 overflow-hidden group reveal" style="transition-delay: 100ms;">
-                    <img src="https://images.unsplash.com/photo-1610408542718-2081d11f8ce1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Nature" class="w-full h-80 object-cover transition duration-700 group-hover:scale-105">
+                <!-- Image 4 -->
+                <div class="overflow-hidden group reveal" style="transition-delay: 100ms;">
+                    <img src="https://lh3.googleusercontent.com/d/10kcs9No9EB8NBUGv0YE0_xOi5Uz7TfTg" alt="Aerial Shot 4" class="w-full h-80 object-cover transition duration-700 group-hover:scale-105">
+                </div>
+                <!-- Image 5 -->
+                <div class="overflow-hidden group reveal" style="transition-delay: 200ms;">
+                    <img src="https://lh3.googleusercontent.com/d/1XSmP081mdJujoxCn6Ez2pLlLPThaonEv" alt="Aerial Shot 5" class="w-full h-80 object-cover transition duration-700 group-hover:scale-105">
+                </div>
+                <!-- Image 6 (Large) -->
+                <div class="md:col-span-2 overflow-hidden group reveal">
+                    <img src="https://lh3.googleusercontent.com/d/1IG60Zb7eS8YVIX05m70KScNZbtngyQ9I" alt="Aerial Shot 6" class="w-full h-80 object-cover transition duration-700 group-hover:scale-105">
+                </div>
+                <!-- Image 7 -->
+                <div class="overflow-hidden group reveal" style="transition-delay: 100ms;">
+                    <img src="https://lh3.googleusercontent.com/d/103H28TOz2evaWYrIEEufRHFW3JmXOsPS" alt="Aerial Shot 7" class="w-full h-80 object-cover transition duration-700 group-hover:scale-105">
+                </div>
+                <!-- Image 8 -->
+                <div class="overflow-hidden group reveal">
+                    <img src="https://lh3.googleusercontent.com/d/1j4QCJ02ymlrp7N7joo2jIRz4vI4B6Fln" alt="Aerial Shot 8" class="w-full h-80 object-cover transition duration-700 group-hover:scale-105">
+                </div>
+                <!-- Image 9 -->
+                <div class="overflow-hidden group reveal" style="transition-delay: 100ms;">
+                    <img src="https://lh3.googleusercontent.com/d/1kL97n4NGcqr7YzYzMGaXqwm-qsDEP6ro" alt="Aerial Shot 9" class="w-full h-80 object-cover transition duration-700 group-hover:scale-105">
                 </div>
             </div>
         </div>
@@ -220,7 +245,7 @@
                     </video>
                 </div>
                 <div class="w-full md:w-72 h-[500px] bg-black rounded-3xl overflow-hidden border-4 border-gray-800 relative reveal" style="transition-delay: 150ms;">
-                    <video class="w-full h-full object-cover" autoplay loop muted playsinline preload="auto">
+                    <video class="initial w-full h-full object-cover" autoplay loop muted playsinline preload="auto">
                         <source src="mi-reel.mp4" type="video/mp4">
                     </video>
                 </div>
@@ -249,45 +274,28 @@
                     <li>Metal Prints</li>
                 </ul>
                 <p class="font-sans text-xs text-gray-500 mb-8 tracking-widest">SIZES: SMALL | MEDIUM | LARGE | PREMIUM GALLERY</p>
-                <a href="https://praerialphoto.darkroom.com/" target="_blank" rel="noopener noreferrer" class="inline-block bg-deep-black text-white px-8 py-4 uppercase tracking-widest text-xs hover:bg-gray-800 transition-colors">
+                <a href="https://praerialphoto.darkroom.com/" target="_blank" rel="noopener noreferrer" class="inline-block bg-deep-black text-white px-8 py-4 uppercase tracking-widest text-xs hover:bg-gray-800 transition-colors shadow-lg">
                     Print Store
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 7: INSTAGRAM -->
-    <section class="bg-deep-black pt-24 pb-12 text-clean-white">
-        <div class="text-center mb-12 reveal">
-            <h3 class="font-serif text-2xl md:text-3xl mb-2">
-                <a href="https://instagram.com/pr_aerial_photo" target="_blank" class="hover:text-gray-300 transition-colors">@pr_aerial_photo</a>
-            </h3>
-            <p class="font-sans text-xs tracking-widest text-gray-400 uppercase">Follow the aerial journey.</p>
-        </div>
-        
-        <div class="w-full relative reveal overflow-hidden pb-4">
-            <div class="w-full transform scale-[1.05] md:scale-100 origin-top">
-                <behold-widget feed-id="QhEXqbBHhPCyQavc5VZD" class="block w-full"></behold-widget>
-            </div>
-            <div class="absolute bottom-0 left-0 w-full h-[60px] bg-deep-black z-50 pointer-events-none"></div>
-        </div>
-    </section>
-
-    <!-- SECTION 8: CONTACT -->
+    <!-- SECTION 7: CONTACT -->
     <section id="contact" class="bg-ocean-blue py-32 px-6 text-center text-white relative">
         <div class="max-w-3xl mx-auto reveal">
             <h2 class="font-serif text-4xl md:text-5xl mb-8">WORK WITH ME</h2>
             <p class="font-sans font-light text-gray-300 text-lg mb-12">
                 Available for commercial projects, tourism campaigns, hotel features, and fine art print inquiries. Let's elevate your brand's perspective.
             </p>
-            <a href="mailto:tuemail@gmail.com" class="inline-block bg-clean-white text-ocean-blue px-12 py-5 uppercase tracking-[0.2em] font-medium text-sm hover:bg-gray-200 transition-colors shadow-xl">
+            <a href="mailto:tuemail@gmail.com" class="inline-block bg-clean-white text-ocean-blue px-12 py-5 uppercase tracking-[0.2em] font-medium text-sm hover:bg-gray-200 transition-colors shadow-2xl">
                 Send an Email
             </a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-deep-black text-gray-500 text-center py-8 font-sans text-xs tracking-wider">
+    <footer class="bg-deep-black text-gray-500 text-center py-8 font-sans text-xs tracking-wider border-t border-white/5">
         <p>&copy; 2026 PR Aerial Photo. All rights reserved.</p>
     </footer>
 
@@ -319,49 +327,26 @@
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
                     nav.classList.remove('bg-transparent', 'py-6');
-                    nav.classList.add('bg-deep-black/90', 'backdrop-blur-md', 'py-4', 'shadow-md');
-                    navBrand.classList.remove('text-ocean-blue');
-                    navBrand.classList.add('text-white');
-                    mobileMenuBtn.classList.remove('text-ocean-blue');
-                    mobileMenuBtn.classList.add('text-white');
+                    nav.classList.add('bg-deep-black/95', 'backdrop-blur-md', 'nav-compact', 'shadow-xl');
                 } else {
                     nav.classList.add('bg-transparent', 'py-6');
-                    nav.classList.remove('bg-deep-black/90', 'backdrop-blur-md', 'py-4', 'shadow-md');
-                    if (!isMenuOpen) {
-                        navBrand.classList.add('text-ocean-blue');
-                        navBrand.classList.remove('text-white');
-                        mobileMenuBtn.classList.add('text-ocean-blue');
-                        mobileMenuBtn.classList.remove('text-white');
-                    }
+                    nav.classList.remove('bg-deep-black/95', 'backdrop-blur-md', 'nav-compact', 'shadow-xl');
                 }
             });
 
             function toggleMenu() {
                 isMenuOpen = !isMenuOpen;
+                const menuIconPath = document.getElementById('menu-icon-path');
                 if (isMenuOpen) {
                     document.body.style.overflow = 'hidden';
                     mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
                     mobileMenu.classList.add('opacity-100', 'pointer-events-auto');
                     menuIconPath.setAttribute('d', 'M6 18L18 6M6 6l12 12');
-                    mobileMenuBtn.classList.remove('text-ocean-blue');
-                    mobileMenuBtn.classList.add('text-white');
-                    navBrand.classList.remove('text-ocean-blue');
-                    navBrand.classList.add('text-white');
-                    nav.classList.remove('shadow-md');
-                    nav.classList.add('bg-transparent');
                 } else {
                     document.body.style.overflow = '';
                     mobileMenu.classList.add('opacity-0', 'pointer-events-none');
                     mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
                     menuIconPath.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
-                    if (window.scrollY <= 50) {
-                        mobileMenuBtn.classList.add('text-ocean-blue');
-                        mobileMenuBtn.classList.remove('text-white');
-                        navBrand.classList.add('text-ocean-blue');
-                        navBrand.classList.remove('text-white');
-                    } else {
-                        nav.classList.add('bg-deep-black/90', 'backdrop-blur-md', 'shadow-md');
-                    }
                 }
             }
 
