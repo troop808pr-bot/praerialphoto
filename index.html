@@ -273,13 +273,15 @@
             <p class="font-sans text-xs tracking-widest text-gray-500 uppercase">Follow the aerial journey.</p>
         </div>
         
-        <!-- IG WIDGET CONTAINER (Recorte limpio sin deformar fotos) -->
-        <div class="max-w-7xl mx-auto px-4 reveal">
+        <!-- IG WIDGET CONTAINER (Recorte limpio y ampliado para móvil) -->
+        <!-- px-0 en móvil hace que las fotos toquen los bordes de la pantalla, viéndose mucho más grandes -->
+        <div class="max-w-7xl mx-auto px-0 md:px-4 reveal">
             <!-- El contenedor principal oculta cualquier cosa que se salga (overflow-hidden) -->
             <div class="w-full overflow-hidden">
-                <!-- El margen negativo (-mb-10 equivale a -40px) empuja SOLO el texto hacia abajo para esconderlo -->
-                <div class="w-full -mb-10">
-                    <behold-widget feed-id="QhEXqbBHhPCyQavc5VZD" class="block w-full"></behold-widget>
+                <!-- Margen negativo ampliado en móvil (-mb-[60px]) para ocultar el anuncio de forma segura -->
+                <div class="w-full -mb-[60px] md:-mb-10">
+                    <!-- scale-105 hace un sutil zoom a las fotos en móvil para agrandarlas un 5% extra -->
+                    <behold-widget feed-id="QhEXqbBHhPCyQavc5VZD" class="block w-full transform scale-105 md:scale-100 origin-top"></behold-widget>
                 </div>
             </div>
         </div>
