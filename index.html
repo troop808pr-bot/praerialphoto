@@ -31,7 +31,7 @@
         }
     </script>
 
-    <!-- Behold Widget Script (Movido al Head para mayor estabilidad) -->
+    <!-- Behold Widget Script -->
     <script type="module" src="https://w.behold.so/widget.js"></script>
 
     <!-- Custom CSS for Animations and Parallax -->
@@ -89,6 +89,7 @@
 
     <!-- Navigation (Minimalist & Mobile Optimized) -->
     <nav class="fixed w-full z-[70] top-0 transition-all duration-300 py-6 px-6 md:px-8 safe-padding flex justify-between items-center bg-transparent text-white drop-shadow-sm">
+        <!-- El nombre completo siempre visible, ajustando su tamaño para celular -->
         <div id="nav-brand" class="font-serif font-bold tracking-wider text-xs sm:text-sm md:text-xl text-ocean-blue transition-colors duration-300 relative max-w-[75%]">
             <span>Puerto Rico Aerial Photography</span>
         </div>
@@ -211,7 +212,7 @@
             </div>
             
             <div class="flex flex-col md:flex-row justify-center gap-8 md:gap-12">
-                <!-- Reel 1 (Video Funcional cargado desde GitHub) -->
+                <!-- Reel 1 -->
                 <div class="w-full md:w-72 h-[500px] bg-black rounded-3xl overflow-hidden border-4 border-gray-800 relative reveal">
                     <video class="w-full h-full object-cover" autoplay loop muted playsinline preload="auto">
                         <source src="mi-reel_2.mp4" type="video/mp4">
@@ -219,17 +220,15 @@
                     </video>
                 </div>
 
-                <!-- Reel 2 (Video Funcional cargado desde GitHub) -->
+                <!-- Reel 2 -->
                 <div class="w-full md:w-72 h-[500px] bg-black rounded-3xl overflow-hidden border-4 border-gray-800 relative reveal" style="transition-delay: 150ms;">
-                    <!-- Autoplay, muted, loop y playsinline aseguran que se vea como un TikTok continuo en móviles -->
                     <video class="w-full h-full object-cover" autoplay loop muted playsinline preload="auto">
-                        <!-- Enlazando tu archivo de video subido en GitHub -->
                         <source src="mi-reel.mp4" type="video/mp4">
                         Tu navegador no soporta video HTML5.
                     </video>
                 </div>
 
-                <!-- Reel 3 (Video Funcional cargado desde GitHub) -->
+                <!-- Reel 3 -->
                 <div class="w-full md:w-72 h-[500px] bg-black rounded-3xl overflow-hidden border-4 border-gray-800 relative reveal" style="transition-delay: 300ms;">
                     <video class="w-full h-full object-cover" autoplay loop muted playsinline preload="auto">
                         <source src="mi-reel_3.mp4" type="video/mp4">
@@ -263,23 +262,22 @@
         </div>
     </section>
 
-    <!-- SECTION 7: INSTAGRAM (Widget Ready) -->
-    <section class="bg-clean-white pt-24 pb-12">
+    <!-- SECTION 7: INSTAGRAM (Widget Ajustado para móvil y Modo Oscuro) -->
+    <!-- Adaptado al fondo oscuro que muestras en tu captura de pantalla -->
+    <section class="bg-deep-black pt-24 pb-12 text-clean-white">
         <div class="text-center mb-12 reveal">
             <h3 class="font-serif text-2xl md:text-3xl mb-2">
-                <a href="https://instagram.com/pr_aerial_photo" target="_blank" class="hover:text-ocean-blue transition-colors">@pr_aerial_photo</a>
+                <a href="https://instagram.com/pr_aerial_photo" target="_blank" class="hover:text-gray-300 transition-colors">@pr_aerial_photo</a>
             </h3>
-            <p class="font-sans text-xs tracking-widest text-gray-500 uppercase">Follow the aerial journey.</p>
+            <p class="font-sans text-xs tracking-widest text-gray-400 uppercase">Follow the aerial journey.</p>
         </div>
         
-        <!-- IG WIDGET CONTAINER (Edge-to-Edge real para Android e iOS) -->
-        <div class="w-full reveal">
-            <!-- Forzamos a que la caja mida exactamente el 100% del ancho de la pantalla (100vw) rompiendo cualquier margen -->
-            <div class="w-[100vw] relative left-1/2 -translate-x-1/2 overflow-hidden">
-                <!-- Margen negativo (-mb-[65px]) para enterrar el anuncio de forma segura -->
-                <div class="w-full -mb-[65px] md:-mb-10">
-                    <behold-widget feed-id="QhEXqbBHhPCyQavc5VZD" class="block w-full"></behold-widget>
-                </div>
+        <!-- Contenedor principal para ocultar lo que sobresalga -->
+        <div class="w-full overflow-hidden reveal">
+            <!-- TRUCO PARA ANDROID: Forzamos la caja a ser 120% más ancha (w-[120%]) y la centramos (-ml-[10%]). -->
+            <!-- Esto obliga al widget a dibujar fotos más grandes, y overflow-hidden recorta el excedente lateral. -->
+            <div class="w-[120%] -ml-[10%] md:w-full md:-ml-0 -mb-[80px] md:-mb-10">
+                <behold-widget feed-id="QhEXqbBHhPCyQavc5VZD" class="block w-full"></behold-widget>
             </div>
         </div>
     </section>
