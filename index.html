@@ -89,9 +89,8 @@
 
     <!-- Navigation (Minimalist & Mobile Optimized) -->
     <nav class="fixed w-full z-[70] top-0 transition-all duration-300 py-6 px-6 md:px-8 safe-padding flex justify-between items-center bg-transparent text-white drop-shadow-sm">
-        <div id="nav-brand" class="font-serif font-bold tracking-wider text-xl text-ocean-blue transition-colors duration-300 relative">
-            <span class="md:hidden text-lg tracking-[0.1em]">PR Aerial</span>
-            <span class="hidden md:inline">Puerto Rico Aerial Photography</span>
+        <div id="nav-brand" class="font-serif font-bold tracking-wider text-xs sm:text-sm md:text-xl text-ocean-blue transition-colors duration-300 relative max-w-[75%]">
+            <span>Puerto Rico Aerial Photography</span>
         </div>
         
         <!-- Desktop Menu -->
@@ -273,15 +272,13 @@
             <p class="font-sans text-xs tracking-widest text-gray-500 uppercase">Follow the aerial journey.</p>
         </div>
         
-        <!-- IG WIDGET CONTAINER (Recorte limpio y ampliado para móvil) -->
-        <!-- px-0 en móvil hace que las fotos toquen los bordes de la pantalla, viéndose mucho más grandes -->
-        <div class="max-w-7xl mx-auto px-0 md:px-4 reveal">
-            <!-- El contenedor principal oculta cualquier cosa que se salga (overflow-hidden) -->
-            <div class="w-full overflow-hidden">
-                <!-- Margen negativo ampliado en móvil (-mb-[60px]) para ocultar el anuncio de forma segura -->
-                <div class="w-full -mb-[60px] md:-mb-10">
-                    <!-- scale-105 hace un sutil zoom a las fotos en móvil para agrandarlas un 5% extra -->
-                    <behold-widget feed-id="QhEXqbBHhPCyQavc5VZD" class="block w-full transform scale-105 md:scale-100 origin-top"></behold-widget>
+        <!-- IG WIDGET CONTAINER (Edge-to-Edge real para Android e iOS) -->
+        <div class="w-full reveal">
+            <!-- Forzamos a que la caja mida exactamente el 100% del ancho de la pantalla (100vw) rompiendo cualquier margen -->
+            <div class="w-[100vw] relative left-1/2 -translate-x-1/2 overflow-hidden">
+                <!-- Margen negativo (-mb-[65px]) para enterrar el anuncio de forma segura -->
+                <div class="w-full -mb-[65px] md:-mb-10">
+                    <behold-widget feed-id="QhEXqbBHhPCyQavc5VZD" class="block w-full"></behold-widget>
                 </div>
             </div>
         </div>
