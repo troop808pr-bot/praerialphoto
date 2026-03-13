@@ -79,6 +79,13 @@
             background-size: cover;
         }
 
+        /* FIX EXCLUSIVO PARA iOS (iPhone/iPad): Resuelve el zoom extremo del fondo */
+        @supports (-webkit-touch-callout: none) {
+            .hero-parallax {
+                background-attachment: scroll;
+            }
+        }
+
         /* Hide scrollbar for a cleaner look */
         ::-webkit-scrollbar {
             width: 8px;
@@ -280,8 +287,8 @@
 
     <!-- SECTION 4: ABOUT THE PHOTOGRAPHER -->
     <section id="about" class="bg-clean-white flex flex-col md:flex-row">
-        <div class="w-full md:w-1/2 h-[500px] md:h-auto overflow-hidden">
-            <img src="https://lh3.googleusercontent.com/d/1TT7TIQOkN6XQxLGQxMkJ3hy51z6zpdfn" alt="Drone Pilot Ángel Maldonado" class="w-full h-full object-cover reveal">
+        <div class="w-full md:w-1/2 h-[500px] md:h-auto bg-deep-black flex items-center justify-center p-12 overflow-hidden">
+            <img src="https://lh3.googleusercontent.com/d/1jEtX0DxSOFCtAHIGYAyGOUD9AJctzFAn" alt="PR Aerial Photo Logo" class="w-full max-w-md h-auto object-contain reveal hover:scale-105 transition duration-700">
         </div>
         <div class="w-full md:w-1/2 flex items-center justify-center p-12 md:p-24 lg:p-32">
             <div class="max-w-lg reveal">
