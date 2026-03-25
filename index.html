@@ -71,22 +71,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-        
-        /* Hero Parallax Setup */
-        .hero-parallax {
-            background-image: linear-gradient(rgba(17, 17, 17, 0.4), rgba(17, 17, 17, 0.7)), url('https://lh3.googleusercontent.com/d/1Ip4F85A_cC8uubsyrchVCvEfnSTg6Tr0');
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        /* FIX EXCLUSIVO PARA iOS */
-        @supports (-webkit-touch-callout: none) {
-            .hero-parallax {
-                background-attachment: scroll;
-            }
-        }
 
         /* Scrollbar styling */
         ::-webkit-scrollbar { width: 8px; }
@@ -225,8 +209,16 @@
     </div>
 
     <!-- HERO SECTION -->
-    <section class="hero-parallax h-screen flex items-center justify-center text-center px-4 relative">
-        <div class="reveal max-w-4xl z-10 text-white">
+    <section class="h-screen flex items-center justify-center text-center px-4 relative overflow-hidden">
+        <!-- Video Background -->
+        <video class="absolute inset-0 w-full h-full object-cover z-0" autoplay loop muted playsinline preload="auto">
+            <source src="Hero_2.mp4" type="video/mp4">
+        </video>
+        
+        <!-- Capa Oscura (Overlay) para legibilidad del texto -->
+        <div class="absolute inset-0 bg-gradient-to-b from-deep-black/40 to-deep-black/70 z-0"></div>
+
+        <div class="reveal max-w-4xl z-10 text-white relative">
             <h1 data-i18n="heroTitle" class="font-serif text-5xl md:text-7xl lg:text-8xl mb-6 tracking-wide drop-shadow-2xl">PUERTO RICO<br>DESDE EL CIELO</h1>
             <p data-i18n="heroSub" class="font-sans font-light text-lg md:text-xl mb-10 max-w-2xl mx-auto opacity-90 drop-shadow-lg">
                 Fotografía aérea capturando la belleza natural de la isla desde una perspectiva única.
@@ -235,7 +227,7 @@
                 Tienda de Impresiones
             </a>
         </div>
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-white opacity-50">
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-white opacity-50 z-10">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
         </div>
     </section>
